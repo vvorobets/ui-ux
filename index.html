@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>UI/UX BSA'18 task</title>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                      <!-- font awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,500,900">
+
+        <link rel="stylesheet" href="style/style.css">
+
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <div class="logo-wrp"><img src="Liberty-Hospital-Logo-.jpg" alt="User's photo"></div>
+                <p class="credo"><i>Caring for Generations.</i></p>
+                <nav>
+                    <ul>
+                        <li><a href=#><i class="fas fa-hospital"></i><span>About</span></a></li>
+                        <li><a href=#><i class="fas fa-phone-square"></i><span>Contacts</span></a></li>
+                        <li><a href=#><i class="fas fa-user"></i><span>My cabinet</span></a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        
+            <h1><i>Welcome, Dr. <span class="username">House</span>!</i></h1>
+            <aside>
+                <div class="profcard">
+                    <div class="photo-wrp"><img class="user-photo" src="medic.png" alt="User's photo"></div>
+                    <h3 class="fullname">Gregory House, M.D.</h3>
+                    <p class="jobname"><i>General Physician</i></p>
+                    <p class="phone"><i class="fas fa-phone"></i> +421 2/547 778 29</p>
+                </div>
+            </aside>
+            <main style="font-size: 12px">
+                <p>Please, select a date:
+                        <i class="far fa-calendar-alt"></i>
+
+
+                    <input type="text" id="datepicker">&nbsp;
+                    <input type="text" id="alternate" size="30">
+                </p>
+                <p>Please, select that day's schedule:
+                <table class="schedule">
+                    <tbody>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox"><span>00:00</span></td>
+                            <td><input onmouseover='check(this)' type="checkbox"><span>08:00</span></td>
+                            <td><input onmouseover='check(this)' type="checkbox"><span>16:00</span></td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">01:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">09:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">17:00</td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">02:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">10:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">18:00</td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">03:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">11:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">19:00</td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">04:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">12:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">20:00</td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">05:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">13:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">21:00</td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">06:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">14:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">22:00</td>
+                        </tr>
+                        <tr>
+                            <td><input onmouseover='check(this)' type="checkbox">07:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">15:00</td>
+                            <td><input onmouseover='check(this)' type="checkbox">23:00</td>
+                        </tr>
+                        </tbody>
+                      </table>
+            </main>
+            
+            <footer>
+                <div class="socials-wrp">
+                    <a href="http://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>  
+                </div>
+
+            </footer>
+        
+        </div>
+        <script>
+              $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  let hours = document.querySelectorAll('input[type="checkbox"]:checked').length;
+  alert(`You have chosen ${hours} hours!`)
+        </script>
+        <script>
+            function check(box) {
+                if(mouseDown) {
+                    box.checked = 1-box.checked;
+                      // box.checked = 1;
+                      // ^ If you only want to turn them on, use this.
+                }
+            }
+            var mouseDown = 0;
+            document.body.onmousedown = function() {++mouseDown;}
+            document.body.onmouseup = function() {--mouseDown;}
+        </script>
+    </body>
+</html>
