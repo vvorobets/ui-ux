@@ -126,7 +126,7 @@
             }
 
             .profcard {
-                background: url("../img/card.jpg") center no-repeat;
+                background: url("../blob/master/img/card.jpg") center no-repeat;
                 background-size: 100%;
                 max-width:600px;
                 max-height: 360px;
