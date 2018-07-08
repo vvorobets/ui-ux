@@ -88,10 +88,13 @@
                         <tr>
                             <td><input onmouseover='check(this)' type="checkbox"><span>07:00</span></td>
                             <td><input onmouseover='check(this)' type="checkbox"><span>15:00</span></td>
-                            <td><input onmouseover='check(this)' type="checkbox"><span>23:00</span></td>
+                            <td><input id="hour23" onmouseover='check(this)' type="checkbox"><span>23:00</span></td>
                         </tr>
                         </tbody>
                       </table>
+                <button id="confirm"><i class="fas fa-check"></i> Save</button>
+                <button id="reset"><i class="fas fa-ban"></i> Reset</button>
+                <p id="result"></p>
             </main>
             
             <footer>
@@ -106,23 +109,41 @@
         
         </div>
         <script>
-              $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  let hours = document.querySelectorAll('input[type="checkbox"]:checked').length;
-  alert(`You have chosen ${hours} hours!`)
-        </script>
-        <script>
+            alert(`Please, choose Your schedule for the nearest time!`)
             function check(box) {
                 if(mouseDown) {
-                    box.checked = 1-box.checked;
-                      // box.checked = 1;
-                      // ^ If you only want to turn them on, use this.
+                    box.checked = 1;
                 }
             }
-            var mouseDown = 0;
+            let mouseDown = 0;
             document.body.onmousedown = function() {++mouseDown;}
             document.body.onmouseup = function() {--mouseDown;}
+
+            let dateToday = new Date();
+            $( function() {
+                $( "#datepicker" ).datepicker({
+                    minDate: dateToday
+                });
+            } );
+            
+            document.getElementById("reset").addEventListener("click", function(){
+                let inputs = document.querySelectorAll('input');
+                    for(let i = 0; i < inputs.length; i++) {
+                        inputs[i].checked = false;
+                    }
+            });
+            
+            document.getElementById("confirm").addEventListener("click", function(){
+                let hours = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                let message = `You have chosen ${hours} hours!`;
+                document.getElementById("result").innerHTML = `You have chosen ${hours} hours!`;
+                let lasthour = document.getElementById("hour23").checked;
+                if(lasthour === true) {
+                    message += "You've chosen work till 0:00. If You want to continue that work shift, please chose hours of the next day."
+                }
+                alert(message);
+            });
+  
         </script>
     </body>
 </html>
