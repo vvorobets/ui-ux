@@ -20,7 +20,7 @@
             }
             header img {
                 height: 100%;
-                max-height: 150px;
+                max-height: 120px;
                 border-radius: 12%;
             }
             header .credo {
@@ -36,15 +36,12 @@
             }
             header nav {
                 grid-area: nav;
-                justify-self: stretch;
-                align-self: start;
-                margin: 0 10px 0 35px;
+                margin: 0 15px 0 0;
             }
             header nav ul {
-                width: 100%;
                 display: flex;
                 flex-flow: row nowrap;
-                justify-content: space-between;
+                justify-content: space-around;
                 list-style: none;
             }
             header nav ul li {
@@ -53,6 +50,11 @@
                 background-color: #F7B733;
                 border-radius: 50%;
                 border: 3px solid #FFF;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
                 
             }
             header nav ul li:hover {
@@ -67,7 +69,7 @@
                 display: none;
             }
             header i {
-                font-size: 25px;
+                font-size: 6vw;
             }
             header {
                 height:40vw;
@@ -94,36 +96,38 @@
             .profcard .photo-wrp {
                 grid-area: photo;
                 align-self: center;
+                padding: 1vw 1vw;
                 
             }
             .profcard img {
-                width: 100%;
+                width: 96%;
                 border-radius: 40%;
             }
             .profcard h3 {
                 grid-area: name;
                 justify-self: end;
-                align-self: end;
+                align-self: center;
                 font-size: 4.2vw;
-                margin-right: 13px;
+                padding-right: 5px;
             }
             .profcard .jobname {
                 grid-area: job;
                 justify-self: end;
+                align-self: center;
                 font-size: 3.5vw;
-                margin-right: 15px;
+                padding-right: 10px;
             }
             .profcard .phone {
                 grid-area: phone;
                 justify-self: end;
+                align-self: center;
                 font-size: 3.5vw;
-                margin-right: 15px;
+                padding-right: 10px;
             }
 
             .profcard {
                 background: url("../img/card.jpg") center no-repeat;
                 background-size: 100%;
-                width: 90vw;
                 max-width:600px;
                 max-height: 360px;
                 height: 54vw;
@@ -132,8 +136,8 @@
                 box-shadow:0 0 2.5vw 0 rgba(0,0,0,0.5),1vw 2.5vw 3vw 1vw rgba(0,0,0,0.15); 
                 margin: 2.5vw 3vw 2vw 3.5vw;
                 display: grid;
-                grid-template-columns: 40% 60%;
-			    grid-template-rows: 20% 15% 10% 20% 30%;
+                grid-template-columns: 40% 55%;
+			    grid-template-rows: 20% 10% 10% 10% 40%;
 			    grid-template-areas: 
                     "photo ."
                     "photo name"
@@ -144,20 +148,34 @@
                 color:#FFF;
 
             }
+            main {
+                font-size: 18px;
+                background-color: #4ABDAC;
+                color: #FFF;
+                text-align: center;
+                padding-bottom: 5px;
+            }
+            main p {
+                padding: 5px 5px;
+            }
             .datepicker {
                 font-size: 4vw;
                 color:#4ABDAC;
                 text-align:center;
             }
             .schedule {
-                width: 100vw;
+                width: 90vw;
                 max-width: 360px;
                 border: 3px solid  #4ABDAC;
                 background-color: #FFF;
+                margin: 5px auto;
             }
             .schedule td {
                 background-color: #DFDCE3;
                 border: 1px solid  #4ABDAC;
+            }
+            .schedule span {
+                color:#4ABDAC;
             }
             input:checked ~ .schedule td {
                 background-color: #FC4A1A;
@@ -165,9 +183,120 @@
             }
             .schedule td input:checked + span {
                 width: 60%;
-	            background: #FC4A1A;
+                background: #FC4A1A;
+                color:#FFF;
             }
             footer {
-                height: 50px;
-                background-color: #4ABDAC;
+                background-color: #FC4A1A;
+                font-size: 18px;
+                color: #FFF;
+                padding: 5px 5px 15px 5px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-around;
+                align-content: center;
+            }
+            footer p {
+                text-align: center;
+            }
+            footer i {
+                font-size: 18px;
+                color: #FFF;
+            }
+            footer .socials-wrp {
+                display: flex;
+                justify-content: space-around;
+            }
+            @media only screen and (min-width: 600px) {
+                header .credo i {
+                    font-size: 32px;
+                }
+                header nav ul li {
+                    height: 30px;
+                    width: auto;
+                    padding: 0 2px;
+                    border-radius: 10px;
+                }
+                header i {
+                    font-size: 18px;
+                }
+                header a span {
+                    display: inline;
+                    font-size: 18px;
+                }
+                header nav {
+                    justify-self: stretch;
+                    align-self: end;
+                    margin: 0 10px 0 0;
+                }
+                header {
+                    height: 150px;
+                    background-color: #4ABDAC;
+                    padding: 30px 18px;
+                    grid-template-columns: 180px 1fr;
+                    grid-template-rows: 70px 70px;
+                    grid-gap: 10px;
+                }
+                h1 {
+                    font-size: 36px;
+                }
+                aside {
+                    display:flex;
+                    justify-content: center;
+                }
+
+                .profcard .photo-wrp {
+                    padding: 10px 10px;
+                }
+                .profcard img {
+                    width: 96%;
+                    border-radius: 40%;
+                }
+                .profcard h3 {
+                    font-size: 26px;
+                }
+                .profcard .jobname {
+                    font-size: 22px;
+                }
+                .profcard .phone {
+                    font-size: 22px;
+                }
+    
+                .profcard {
+                    width:555px;
+                    height: 333px;
+                    box-shadow:0 0 12px 0 rgba(0,0,0,0.5),5px 12px 15px 5px rgba(0,0,0,0.15); 
+                    margin: 12px 15px 10px 18px;
+                    grid-gap: 10px;
+                }
+    
+            }
+            @media only screen and (min-width: 1200px) {
+                header{
+                    grid-area: header;
+                }
+                h1 {
+                    grid-area: h1;
+                }
+                aside{
+                    grid-area: aside;
+                }
+                main{
+                    grid-area: main;
+                }
+                footer{
+                    grid-area: footer;
+                }
+                .container {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: 
+                        "header header"
+                        "h1 h1"
+                        "aside main"
+                        "footer footer";
+                        grid-gap: 5px;
+    
+                }
             }
